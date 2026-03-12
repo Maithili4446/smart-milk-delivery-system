@@ -57,7 +57,7 @@ export const AuthProvider = ({ children }) => {
             localStorage.removeItem("access");
             localStorage.removeItem("refresh");
 
-            const res = await API.post("/login/", { username, password });
+            const res = await API.post("/api/token/", { username, password });
 
             localStorage.setItem("access", res.data.access);
             localStorage.setItem("refresh", res.data.refresh);
